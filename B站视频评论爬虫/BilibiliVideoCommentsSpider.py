@@ -59,22 +59,37 @@ def Out2File(dict):
                 print("out2File error")
         print('当前页面保存完成')
 
-
-    path_txt='BiliBili评论.txt'
-    f = open(path_txt,'r',encoding='UTF-8').read()
-
-    # 结巴分词，生成字符串，wordcloud是英文库，无法直接生成正确的中文词云
-    cut_text = " ".join(jieba.cut(f))
-
-    wordcloud = WordCloud(
-       font_path="C:/Windows/Fonts/simfang.ttf",
-       #设置字体
-       background_color="white",
-       #背景颜色
-       width=1000,height=800).generate(cut_text)
-       #设置图片宽和高
-
-    plt.imshow(wordcloud, interpolation="bilinear")
-    plt.axis("off")
-    plt.show()
-    wordcloud.to_file("哔哩哔哩词云.png")
+if __name__ == '__main__':
+    e=0
+    page=1
+    while e == 0 :
+        url = "https://api.bilibili.com/x/v2/reply?pn="+ str(page)+"&type=1&oid=17784172&sort=2"
+        try:
+            print()
+            content=get_content(url)
+            print("page:",page)
+            Out2File(content)
+            page=page+1
+            # 为了降低被封ip的风险，每爬20页便歇5秒。
+            if page%10 == 0:
+                time.sleep(5)
+        except:
+            e=1
+    # path_txt='BiliBili评论.txt'
+    # f = open(path_txt,'r',encoding='UTF-8').read()
+    #
+    # # 结巴分词，生成字符串，wordcloud是英文库，无法直接生成正确的中文词云
+    # cut_text = " ".join(jieba.cut(f))
+    #
+    # wordcloud = WordCloud(
+    #    font_path="C:/Windows/Fonts/simfang.ttf",
+    #    #设置字体
+    #    background_color="white",
+    #    #背景颜色
+    #    width=1000,height=800).generate(cut_text)
+    #    #设置图片宽和高
+    #
+    # plt.imshow(wordcloud, interpolation="bilinear")
+    # plt.axis("off")
+    # plt.show()
+    # wordcloud.to_file("哔哩哔哩词云.png")

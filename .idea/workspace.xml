@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1b9c5fe3-6e0d-4a6f-a73f-0fe712388632" name="更改" comment="">
-      <change afterPath="$PROJECT_DIR$/B站视频评论爬虫/main.py" afterDir="false" />
+    <list default="true" id="1b9c5fe3-6e0d-4a6f-a73f-0fe712388632" name="更改" comment="功能分流">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/B站视频评论爬虫/BilibiliVideoCommentsSpider.py" beforeDir="false" afterPath="$PROJECT_DIR$/B站视频评论爬虫/BilibiliVideoCommentsSpider.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/B站视频评论爬虫/main.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,6 +23,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="ProjectId" id="1xSOwg6QZeCDDDEs8HrHgNQYEo8" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -44,7 +45,7 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="settings.editor.selected.configurable" value="copyright" />
   </component>
-  <component name="RunManager" selected="Python.main">
+  <component name="RunManager" selected="Python.BilibiliVideoCommentsSpider">
     <configuration default="true" type="DjangoTestsConfigurationType">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -237,6 +238,21 @@
       <updated>1630345264858</updated>
       <workItem from="1630345266887" duration="255000" />
     </task>
+    <task id="LOCAL-00001" summary="功能分流">
+      <created>1630346519184</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1630346519184</updated>
+    </task>
+    <task id="LOCAL-00002" summary="功能分流">
+      <created>1630346589227</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1630346589227</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -255,9 +271,11 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="功能分流" />
+    <option name="LAST_COMMIT_MESSAGE" value="功能分流" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/BilibiliVideoCommentsSpider$main.coverage" NAME="main 覆盖结果" MODIFIED="1630346451948" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/BilibiliVideoCommentsSpider$main.coverage" NAME="main 覆盖结果" MODIFIED="1630346745568" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/BilibiliVideoCommentsSpider$BilibiliVideoCommentsSpider.coverage" NAME="BilibiliVideoCommentsSpider 覆盖结果" MODIFIED="1630346448818" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/B站视频评论爬虫" />
   </component>
 </project>
