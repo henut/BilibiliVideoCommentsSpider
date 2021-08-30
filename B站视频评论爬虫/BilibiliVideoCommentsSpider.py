@@ -2,6 +2,11 @@ import requests
 import time
 from bs4 import BeautifulSoup
 import json
+#根据爬取的评论生成的txt文件生成词云
+from wordcloud import WordCloud
+import matplotlib.pyplot as plt
+import  jieba
+from PIL import Image
 
 #爬取视频评论   https://www.bilibili.com/video/av17784172
 
@@ -70,29 +75,21 @@ if __name__ == '__main__':
                 time.sleep(5)
         except:
             e=1
+    path_txt='BiliBili评论.txt'
+    f = open(path_txt,'r',encoding='UTF-8').read()
 
+    # 结巴分词，生成字符串，wordcloud是英文库，无法直接生成正确的中文词云
+    cut_text = " ".join(jieba.cut(f))
 
-#根据爬取的评论生成的txt文件生成词云
-from wordcloud import WordCloud
-import matplotlib.pyplot as plt  
-import  jieba     
-from PIL import Image               
+    wordcloud = WordCloud(
+       font_path="C:/Windows/Fonts/simfang.ttf",
+       #设置字体
+       background_color="white",
+       #背景颜色
+       width=1000,height=800).generate(cut_text)
+       #设置图片宽和高
 
-path_txt='BiliBili评论.txt'
-f = open(path_txt,'r',encoding='UTF-8').read()
-
-# 结巴分词，生成字符串，wordcloud是英文库，无法直接生成正确的中文词云
-cut_text = " ".join(jieba.cut(f))
-
-wordcloud = WordCloud(
-   font_path="C:/Windows/Fonts/simfang.ttf",
-   #设置字体
-   background_color="white",
-   #背景颜色
-   width=1000,height=800).generate(cut_text)
-   #设置图片宽和高
-
-plt.imshow(wordcloud, interpolation="bilinear")
-plt.axis("off")
-plt.show()
-wordcloud.to_file("哔哩哔哩词云.png") 
+    plt.imshow(wordcloud, interpolation="bilinear")
+    plt.axis("off")
+    plt.show()
+    wordcloud.to_file("哔哩哔哩词云.png")
